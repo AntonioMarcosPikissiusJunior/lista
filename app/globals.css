@@ -1,26 +1,282 @@
-@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
+  background: #f2f5fa;
+  color: #202c40;
+}
+
+.pagina {
+  min-height: 100vh;
+  padding: 35px 20px;
+}
+
+.topo {
+  max-width: 850px;
+  margin: auto;
+  margin-bottom: 65px;
+}
+
+.marca {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.marca span {
+  color: #3978d6;
+}
+
+.topo p {
+  color: #8b96a8;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-top: 7px;
+}
+
+.conteudo {
+  max-width: 750px;
+  margin: auto;
+  background: white;
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 10px 35px #253d6010;
+}
+
+.boas-vindas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.etiqueta {
+  color: #3978d6;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.boas-vindas h1 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin: 12px 0;
+}
+
+.boas-vindas p {
+  color: #8b96a8;
+  font-size: 13px;
+}
+
+.progresso {
+  width: 95px;
+  height: 95px;
+  border: 5px solid #e4edfa;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.progresso strong {
+  font-size: 22px;
+  color: #3978d6;
+}
+
+.progresso span {
+  font-size: 10px;
+  color: #8b96a8;
+}
+
+.adicionar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 35px;
+}
+
+.adicionar input {
+  flex: 1;
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid #dce3ed;
+  border-radius: 7px;
+  outline: none;
+  font-size: 13px;
+}
+
+.adicionar input:focus {
+  border-color: #3978d6;
+}
+
+.adicionar button {
+  background: #3978d6;
+  color: white;
+  border: none;
+  padding: 0 20px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.barra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.barra h2 {
+  font-size: 17px;
+}
+
+.filtros {
+  display: flex;
+  gap: 5px;
+}
+
+.filtros button {
+  border: none;
+  background: transparent;
+  color: #8994a5;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.filtros .selecionado {
+  background: #eaf1fc;
+  color: #3978d6;
+  font-weight: bold;
+}
+
+.lista {
+  min-height: 180px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px 5px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.check {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #c5cfdd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+}
+
+.marcado {
+  background: #3978d6;
+  border-color: #3978d6;
+  color: white;
+}
+
+.nome {
+  flex: 1;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.feita {
+  color: #9ba5b4;
+  text-decoration: line-through;
+}
+
+.excluir {
+  border: none;
+  background: transparent;
+  color: #e16b6b;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.mensagem {
+  text-align: center;
+  padding: 45px 10px;
+  color: #8b96a8;
+}
+
+.mensagem span {
+  font-size: 30px;
+  color: #3978d6;
+}
+
+.mensagem p {
+  margin: 12px 0 6px;
+  color: #39465b;
+  font-size: 14px;
+}
+
+.mensagem small {
+  font-size: 12px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #edf0f5;
+  padding-top: 18px;
+  color: #8b96a8;
+  font-size: 11px;
+}
+
+.rodape {
+  text-align: center;
+  margin-top: 30px;
+  color: #a0aaba;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 550px) {
+  .pagina {
+    padding: 25px 12px;
+  }
+
+  .topo {
+    margin-bottom: 35px;
+  }
+
+  .conteudo {
+    padding: 22px 16px;
+  }
+
+  .boas-vindas h1 {
+    font-size: 28px;
+  }
+
+  .progresso {
+    width: 75px;
+    height: 75px;
+  }
+
+  .adicionar {
+    flex-direction: column;
+  }
+
+  .adicionar button {
+    padding: 14px;
+  }
+
+  .barra {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .filtros {
+    flex-wrap: wrap;
+  }
 }
